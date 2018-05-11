@@ -14,6 +14,7 @@ public class Model {
 	
 	public List<Nerc> getNercList() {
 		return podao.getNercList();
+
 	}
 
 }

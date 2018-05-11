@@ -1,6 +1,8 @@
 package it.polito.tdp.poweroutages.model;
 
-public class Nerc {
+
+
+public class Nerc implements Comparable<Nerc>{
 
 	private int id;
 	private String value;
@@ -53,5 +55,12 @@ public class Nerc {
 		StringBuilder builder = new StringBuilder();
 		builder.append(value);
 		return builder.toString();
+	}
+	
+	@Override
+	public int compareTo(Nerc arg0) {
+		// TODO Auto-generated method stub
+		
+		return this.value.compareTo(arg0.value);
 	}
 }
