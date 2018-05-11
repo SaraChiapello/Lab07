@@ -55,9 +55,8 @@ public class PowerOutagesController {
 	public void setModel(Model model) {
 		// TODO Auto-generated method stub
 		this.model=model;
-		System.out.println("ddddddddddddddddddd");
+
     	setComboItems();
-    	System.out.println("aaaaaaaaaaaaaaaaaa");
 	}
 
 	private void setComboItems() {

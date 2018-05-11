@@ -6,14 +6,25 @@ import it.polito.tdp.poweroutages.db.PowerOutageDAO;
 
 public class Model {
 
-	PowerOutageDAO podao;
+	private PowerOutageDAO podao;
+	
+	private List<PowerOutageEvent> po;
+	private List<Nerc> nerc;
+	
+	private NercIdMap nercmap;
+		
 	
 	public Model() {
 		podao = new PowerOutageDAO();
+		
+		nercmap=new NercIdMap();
+		
+		nerc=podao.getNercList(nercmap);
 	}
 	
 	public List<Nerc> getNercList() {
-		return podao.getNercList();
+//	return podao.getNercList;
+		return this.nerc;
 
 	}
 

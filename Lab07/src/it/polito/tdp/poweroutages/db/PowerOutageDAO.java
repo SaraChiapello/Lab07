@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.polito.tdp.poweroutages.model.Nerc;
+import it.polito.tdp.poweroutages.model.NercIdMap;
 
 public class PowerOutageDAO {
 
-	public List<Nerc> getNercList() {
+	public List<Nerc> getNercList(NercIdMap nercmap) {
 
 		String sql = "SELECT id, value FROM nerc";
 		List<Nerc> nercList = new ArrayList<>();
@@ -23,7 +24,7 @@ public class PowerOutageDAO {
 
 			while (res.next()) {
 				Nerc n = new Nerc(res.getInt("id"), res.getString("value"));
-				nercList.add(n);
+				nercList.add(nercmap.get(n));
 			}
 
 			conn.close();
